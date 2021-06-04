@@ -1,0 +1,66 @@
+<!--
+Matthew Jensen
+Created Oct 1, 2020
+Edited:
+Oct 7, 2020 - Added <span> fields for items in the lists.
+Oct 20, 2020 - Added checkbox functionality, editing, deleting, checkout, reset, logic, etc.
+-->
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+	<title>Simple Shopping List</title>
+	    <link rel="stylesheet" href="./stylesheet.css">
+		<script src="jsfunctions.js"></script>
+	</head>
+	
+	<body onload="onLoad()">
+	
+		<h1>Shopping List</h1>
+		<input type="number" id="quantity_value" value="1" name="quantity" step="1">
+		<input type="text" id="item_value" placeholder="new item" name="add item">
+		<input type="text" id="price_value" placeholder="price" name="price">
+		<select id="unit_value" name="unit">
+		  <option value="" disabled selected hidden>unit</option>
+		  <option value="lb">lb</option>
+		  <option value="bag">bag</option>
+		  <option value="each">each</option>
+		  <option value="jar">jar</option>
+		  <option value="package">package</option>
+		  <option value="box">box</option>
+		</select>
+		<input type="submit" value="Add" onclick="addItem()">
+		<input type="submit" value="Reset" onclick="resetInputs()">
+		<input id="cancel_edit" type="submit" value="Cancel" onclick="cancelEditItem()">
+		<br><br>
+		
+		<table>
+			<tr>
+				<th>Needed ($<span id="uncheckedValue"></span>)</th>
+				<th>In Cart ($<span id="checkedValue"></span>)</th>
+			</tr>
+			<tr>
+				<td id="unchecked">
+
+				</td>
+				<td id="checked">
+
+				</td>
+			</tr>
+		</table>
+		
+		<div class="template" id="item_template">
+			<input type="checkbox" id="checkbox" onclick="swapCart(this)">
+			<span id="quantity_template">5</span>
+			<span id="unit_template">lb</span>
+			<span id="item_template">apples</span>
+			<span id="price_template">($1.99/lb)</span>
+			<span class="styled_button" onclick="editItem(this)">...</span>
+			<span class="styled_button" onclick="deleteItem(this)">_</span>
+        </div>
+		
+		<input type="submit" value="Checkout" onclick="checkout()">
+	</body>
+	
+</html>

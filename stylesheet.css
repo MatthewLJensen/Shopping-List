@@ -1,0 +1,36 @@
+table {
+	table-layout: fixed;
+	width: 800px;
+	border: 1px;
+}
+
+th {
+	text-align: left;
+	font-weight: bold;
+}
+
+td {
+	vertical-align: top;
+}
+
+input[type=number]{
+	width: 30px;
+}
+
+#price {
+	width: 70px
+}
+
+.template
+{
+	display:none;
+}
+
+.styled_button:hover{
+  cursor: pointer;
+  content: "test";
+}
+
+#cancel_edit{
+	visibility: hidden;
+}
